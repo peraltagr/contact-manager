@@ -1,7 +1,16 @@
-from flask import request, jsonify
+from flask import request, jsonify, send_from_directory
 from config import app, db
 from models import Contact
+import os
 
+dist_folder = os.path.join(os.getcwd(),"..","frontend","dist")
+
+@app.route("/",defaults={"filename":""})
+@app.route("/<path:filename>")
+def index(filename):
+    if not filename:
+        filename = "index.html"
+    return send_from_directory(dist_folder, filename)
 
 @app.route("/contacts", methods=["GET"])
 def get_contacts():
