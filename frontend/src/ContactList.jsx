@@ -7,7 +7,7 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
         method: "DELETE",
       };
       const response = await fetch(
-        `http://127.0.0.1:8000/delete_contact/${id}`,
+        `https://contact-manager-26tw.onrender.com/delete_contact/${id}`,
         options
       );
       if (response.status === 200) {

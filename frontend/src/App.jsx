@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   const fetchContacts = async () => {
-    const response = await fetch("http://127.0.0.1:8000/contacts");
+    const response = await fetch("https://contact-manager-26tw.onrender.com/contacts");
     const data = await response.json();
     setContacts(data.contacts);
   };

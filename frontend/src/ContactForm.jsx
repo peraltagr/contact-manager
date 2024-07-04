@@ -15,7 +15,7 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
             lastName,
             email
         }
-        const url = "http://127.0.0.1:8000/" + (updating ? `update_contact/${existingContact.id}` : "create_contact")
+        const url = "https://contact-manager-26tw.onrender.com/" + (updating ? `update_contact/${existingContact.id}` : "create_contact")
         const options = {
             method: updating ? "PATCH" : "POST",
             headers: {
