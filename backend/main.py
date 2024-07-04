@@ -3,9 +3,11 @@ from config import app, db
 from models import Contact
 import os
 
-dist_folder = os.path.join(os.getcwd(),"..","frontend","dist")
+backend_folder = os.path.dirname(__file__)
+frontend_folder = os.path.join(backend_folder, "..", "frontend")
+dist_folder = os.path.join(frontend_folder, "dist")
 
-@app.route("/",defaults={"filename":""})
+@app.route("/", defaults={"filename": ""})
 @app.route("/<path:filename>")
 def index(filename):
     if not filename:
